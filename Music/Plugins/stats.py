@@ -48,24 +48,24 @@ async def gstats(_, message):
     free = (hdd.free / (1024.0 ** 3))
     free = str(free)
     msg = f"""
-**Global Stats of Music Bot**:\n
+**NOINOI STATS**:\n
 [•] <u>__**System Stats**__</u>
-**Music Uptime:** {uptime}
-**System Process:** Online
-**Platform:** {sc}
-**Storage:** Used {used[:4]} GiB out of {total[:4]} GiB, free {free[:4]} GiB
-**Architecture:** {arch}
-**Ram:** {ram}
-**Python Version:** {pyver.split()[0]}
-**Pyrogram Version:** {pyrover}
-**PyTgCalls Version:** {pytg_version}
+**✨ Music Uptime:** {uptime}
+**✨ System Process:** Online
+**✨ Platform:** {sc}
+**✨ Storage:** Used {used[:4]} GiB out of {total[:4]} GiB, free {free[:4]} GiB
+**✨ Architecture:** {arch}
+**✨ Ram:** {ram}
+**✨ Python Version:** {pyver.split()[0]}
+**✨ Pyrogram Version:** {pyrover}
+**✨ PyTgCalls Version:** {pytg_version}
 
 [•] <u>__**Bot Stats**__</u>
-**Modules Loaded:** {modules_count}
-**Total File On Module:** {file_on_module}
-**GBanned Users:** {blocked}
-**Sudo Users:** {j}
-**Allowed Chats:** {len(served_chats)}
+**✨ Modules Loaded:** {modules_count}
+**✨ Total File On Module:** {file_on_module}
+**✨ GBanned Users:** {blocked}
+**✨ Sudo Users:** {j}
+**✨ Allowed Chats:** {len(served_chats)}
 
 """
     served_chats.pop(0)
