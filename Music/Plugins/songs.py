@@ -122,7 +122,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply('**Please Wait! Im Searching For Your Song 🔎...**')
+    m = message.reply('**🎅🏻**')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -245,7 +245,7 @@ async def ytmusic(client, message: Message):
 
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
-    YTVID_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton("📺 Watch On YouTube 📺", url=f"{mo}")]])
+    YTVID_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton("WATCH ON YOUTUBE📣", url=f"{mo}")]])
     capy = f"**🎧️ Music Video Name:** `{thum}` \n\n**👨‍💻️ Your Keyword:** `{urlissed}` \n**😉️ YouTube Channel:** `{thums}` \n**🔗️ Video Link :** `{mo}`"
     await client.send_video(
         message.chat.id,
