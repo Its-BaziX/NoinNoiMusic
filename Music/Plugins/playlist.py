@@ -42,7 +42,7 @@ options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", 
 async def pause_cmd(_, message):
     thumb ="cache/playlistthumb.jpg"
     await message.reply_photo(
-    photo=thumb, 
+    photo="https://telegra.ph/file/e3c1e773a8e0fd11f53ed.jpg", 
     caption=("**__Music's Playlist Feature__**\n\nSelect The Playlist, You want to check!"),    
     reply_markup=play_list_keyboard) 
     return 
