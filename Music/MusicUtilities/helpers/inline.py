@@ -117,7 +117,9 @@ def search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, dura
             ],
             [ 
                 InlineKeyboardButton(text="4️", callback_data=f'Music {ID4}|{duration4}|{user_id}'),
-                InlineKeyboardButton(text="5️", callback_data=f'Music {ID5}|{duration5}|{user_id}')
+                InlineKeyboardButton(
+                        "🗑 ᴄʟᴏsᴇ", callback_data="close2"
+                    )
             ],
         ]
     return buttons   
