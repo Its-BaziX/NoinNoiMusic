@@ -93,13 +93,13 @@ async def play(_, message: Message):
     try:
         b = await app.get_chat_member(message.chat.id , ASSID) 
         if b.status == "kicked":
-            await message.reply_text(f"❌ {ASSNAME}(@{ASSUSERNAME}) is banned in your chat **{chat_title}**\n\nUnban it first to use Music")
+            await message.reply_text(f"❌ Assistant is banned in your chat **{chat_title}**\n\nUnban it first to use Music")
             return
     except UserNotParticipant:
         if message.chat.username:
             try: 
                 await ASS_ACC.join_chat(f"{message.chat.username}")
-                await message.reply(f"✅ {ASSNAME} Joined Successfully",) 
+                await message.reply(f"✅ Noinoi Joined Successfully",) 
                 await remove_active_chat(chat_id)
             except Exception as e:
                 await message.reply_text(f"❌ __**Assistant Failed To Join**__\n\n**Reason**:{e}")
@@ -257,18 +257,15 @@ async def play(_, message: Message):
             duration3 = (result[2]["duration"])
             title4 = (result[3]["title"])
             duration4 = (result[3]["duration"])
-            title5 = (result[4]["title"])
-            duration5 = (result[4]["duration"])
             ID1 = (result[0]["id"])
             ID2 = (result[1]["id"])
             ID3 = (result[2]["id"])
             ID4 = (result[3]["id"])
-            ID5 = (result[4]["id"])
         except Exception as e:
             return await mystic.edit_text(f"❌ Soung Not Found.\n**Possible Reason:**{e}")
         thumb ="https://telegra.ph/file/e3c1e773a8e0fd11f53ed.jpg"
         await mystic.delete()   
-        buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
+        buttons = search_markup(ID1, ID2, ID3, ID4, duration1, duration2, duration3, duration4, user_id, query)
         hmo = await message.reply_photo(
             photo="https://telegra.ph/file/e3c1e773a8e0fd11f53ed.jpg", 
             caption=(f"**List Of Result**\n1️⃣ <b>{title1}</b>\n  ┗  💡 <u>__[NOINOI](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n2️⃣ <b>{title2}</b>\n  ┗  💡 <u>__[NOINOI](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n3️⃣ <b>{title3}</b>\n  ┗  💡 <u>__[NOINOI](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n4️⃣ <b>{title4}</b>\n  ┗  💡 <u>__[NOINOI](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n5️⃣ <b>{title5}</b>\n  ┗  💡 <u>__[NOINOI](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>"),    
@@ -507,8 +504,6 @@ async def popat(_,CallbackQuery):
         title4 = (result[3]["title"])
         duration4 = (result[3]["duration"])
         title5 = (result[4]["title"])
-        duration5 = (result[4]["duration"])
-        title6 = (result[5]["title"])
         duration6 = (result[5]["duration"])
         title7= (result[6]["title"])
         duration7 = (result[6]["duration"])      
@@ -522,8 +517,7 @@ async def popat(_,CallbackQuery):
         ID2 = (result[1]["id"])
         ID3 = (result[2]["id"])
         ID4 = (result[3]["id"])
-        ID5 = (result[4]["id"])
-        ID6 = (result[5]["id"])
+        ID6 = (result[4]["id"])
         ID7 = (result[6]["id"])
         ID8 = (result[7]["id"])
         ID9 = (result[8]["id"])
@@ -539,9 +533,9 @@ async def popat(_,CallbackQuery):
         disable_web_page_preview=True
         return    
     if i == 2:
-        buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
+        buttons = search_markup(ID1, ID2, ID3, ID4, duration1, duration2, duration3, duration4, duration5, user_id, query)
         await CallbackQuery.edit_message_text(
-            f"1️ <b>{title1}</b>\n  ┗  💡 <u>__[NOINOI](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n2️ <b>{title2}</b>\n  ┗  💡 <u>__[NOINOI](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n3️ <b>{title3}</b>\n  ┗  💡 <u>__[NOINOI](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n4️ <b>{title4}</b>\n  ┗  💡 <u>__[NOINOI](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n5️ <b>{title5}</b>\n  ┗  💡 <u>__[NOINOI](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>",    
+            f"1️ <b>{title1}</b>\n  ┗  💡 <u>__[NOINOI](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n2️ <b>{title2}</b>\n  ┗  💡 <u>__[NOINOI](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n3️ <b>{title3}</b>\n  ┗  💡 <u>__[NOINOI](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n4️ <b>{title4}</b>\n  ┗  💡 <u>__[NOINOI](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n",  
             reply_markup=InlineKeyboardMarkup(buttons),
         )  
         disable_web_page_preview=True
