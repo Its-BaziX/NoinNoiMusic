@@ -43,7 +43,7 @@ def others_markup(videoid, user_id):
 
 
 
-others_keyboard = InlineKeyboardMarkup(
+play_keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
