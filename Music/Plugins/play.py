@@ -122,7 +122,7 @@ async def play(_, message: Message):
     if audio:
         fucksemx = 1
         what = "Audio Searched"
-        mystic = await message.reply_text(f"**🔄 Processing Audio Given By {username}**")
+        mystic = await message.reply_text(f"**🎅🏻**")
         if audio.file_size > 157286400:
             await mystic.edit_text("❌ Audio File Size Should Be Less Than 150 mb") 
             return
@@ -234,10 +234,10 @@ async def play(_, message: Message):
         if len(message.command) < 2:
             what = "Command"
             user_name = message.from_user.first_name
-            thumb ="cache/nofound.jpg"
+            thumb ="https://telegra.ph/file/e3c1e773a8e0fd11f53ed.jpg"
             buttons = playlist_markup(user_name, user_id)
             hmo = await message.reply_photo(
-            photo=thumb, 
+            photo="https://telegra.ph/file/e3c1e773a8e0fd11f53ed.jpg", 
             caption=("**Usage:** /play [Music Name or Youtube Link or Reply to Audio]\n\nIf you want to play Playlists! Select the one from Below."),    
             reply_markup=InlineKeyboardMarkup(buttons),
             ) 
@@ -245,7 +245,7 @@ async def play(_, message: Message):
         what = "Query Given"
         await LOG_CHAT(message, what)
         query = message.text.split(None, 1)[1]
-        mystic = await message.reply_text("**🔄 Searching**")
+        mystic = await message.reply_text("**🎅**")
         try:
             a = VideosSearch(query, limit=5)
             result = (a.result()).get("result")
@@ -266,11 +266,11 @@ async def play(_, message: Message):
             ID5 = (result[4]["id"])
         except Exception as e:
             return await mystic.edit_text(f"❌ Soung Not Found.\n**Possible Reason:**{e}")
-        thumb ="cache/playlistthumb.jpg"
+        thumb ="https://telegra.ph/file/e3c1e773a8e0fd11f53ed.jpg"
         await mystic.delete()   
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
         hmo = await message.reply_photo(
-            photo=thumb, 
+            photo="https://telegra.ph/file/e3c1e773a8e0fd11f53ed.jpg", 
             caption=(f"**List Of Result**\n\n1️⃣ <b>{title1}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n2️⃣ <b>{title2}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n3️⃣ <b>{title3}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n4️⃣ <b>{title4}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n5️⃣ <b>{title5}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>"),    
             reply_markup=InlineKeyboardMarkup(buttons),
         )  
@@ -302,7 +302,7 @@ async def play(_, message: Message):
             buttons = audio_markup(videoid, user_id)
         checking = f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
         await message.reply_photo(
-            photo=thumb,
+            photo="https://telegra.ph/file/e3c1e773a8e0fd11f53ed.jpg",
             caption=(f"🎬 <b>__Song:__</b>[{title[:25]}]({link}) \n⏳ <b>__Duration:__</b> {duration} \n👤 <b>__Requested by:__ </b>{checking} \n🚧 <b>__Queued at:__</b> <b>#{position}!</b>"),
             reply_markup=InlineKeyboardMarkup(buttons)
         )
@@ -332,7 +332,7 @@ async def play(_, message: Message):
             f28.close()
             buttons = audio_markup(videoid, user_id)
         await message.reply_photo(
-        photo=thumb,
+        photo="https://telegra.ph/file/e3c1e773a8e0fd11f53ed.jpg",
         reply_markup=InlineKeyboardMarkup(buttons),    
         caption=(f"🎥 <b>__Playing:__</b>[{title[:25]}]({link}) \n⏳ <b>__Duration:__</b> {duration} \n👤 <b>__Requested by:__</b>{checking}")
     )   
@@ -450,7 +450,7 @@ async def startyuplay(_,CallbackQuery):
         f28.close()
         await mystic.delete()
         m = await CallbackQuery.message.reply_photo(
-        photo=thumb,
+        photo="https://telegra.ph/file/e3c1e773a8e0fd11f53ed.jpg",
         caption=(f"🎬 <b>__Song:__ </b>[{title[:25]}]({url}) \n⏳ <b>__Duration:__</b> {duration} \n💡 <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{id})\n👤 <b>__Requested by:__ </b>{checking} \n🚧 <b>__Queued at:__</b> <b>#{position}!</b>"),
         reply_markup=InlineKeyboardMarkup(buttons)
     )
@@ -471,7 +471,7 @@ async def startyuplay(_,CallbackQuery):
         buttons = play_markup(videoid, user_id)
         await mystic.delete()
         m = await CallbackQuery.message.reply_photo(
-        photo=thumb,
+        photo="https://telegra.ph/file/e3c1e773a8e0fd11f53ed.jpg",
         reply_markup=InlineKeyboardMarkup(buttons),    
         caption=(f"🎥 <b>__Playing:__ </b>[{title[:25]}]({url}) \n⏳ <b>__Duration:__</b> {duration} \n💡 <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{id})\n👤**__Requested by:__** {checking}")
     )   
@@ -533,7 +533,7 @@ async def popat(_,CallbackQuery):
     if i == 1:
         buttons = search_markup2(ID6, ID7, ID8, ID9, ID10, duration6, duration7, duration8, duration9, duration10 ,user_id, query)
         await CallbackQuery.edit_message_text(
-            f"6️⃣ <b>{title6}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID6})__</u>\n\n7️⃣ <b>{title7}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID7})__</u>\n\n8️⃣ <b>{title8}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID8})__</u>\n\n9️⃣ <b>{title9}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID9})__</u>\n\n🔟 <b>{title10}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID10})__</u>",    
+            f"6️⃣ <b>{title6}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID6})__</u>\n7️⃣ <b>{title7}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID7})__</u>\n8️⃣ <b>{title8}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID8})__</u>\n9️⃣ <b>{title9}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID9})__</u>\n🔟 <b>{title10}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID10})__</u>",    
             reply_markup=InlineKeyboardMarkup(buttons),
         )  
         disable_web_page_preview=True
@@ -541,7 +541,7 @@ async def popat(_,CallbackQuery):
     if i == 2:
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
         await CallbackQuery.edit_message_text(
-            f"1️⃣ <b>{title1}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n2️⃣ <b>{title2}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n3️⃣ <b>{title3}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n4️⃣ <b>{title4}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n5️⃣ <b>{title5}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>",    
+            f"1️ <b>{title1}</b>\n  ┗  ✨ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n2️ <b>{title2}</b>\n  ┗  ✨ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n3️ <b>{title3}</b>\n  ┗  ✨ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n4️ <b>{title4}</b>\n  ┗  ✨ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n5️ <b>{title5}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>",    
             reply_markup=InlineKeyboardMarkup(buttons),
         )  
         disable_web_page_preview=True
@@ -549,12 +549,12 @@ async def popat(_,CallbackQuery):
         
 @app.on_message(filters.command("playplaylist"))
 async def play_playlist_cmd(_, message):
-    thumb ="cache/playlistthumb.jpg"
+    thumb ="https://telegra.ph/file/e3c1e773a8e0fd11f53ed.jpg"
     user_id = message.from_user.id
     user_name = message.from_user.first_name
     buttons = playlist_markup(user_name, user_id)
     await message.reply_photo(
-    photo=thumb, 
+    photo="https://telegra.ph/file/e3c1e773a8e0fd11f53ed.jpg", 
     caption=("**__Music's Playlist Feature__**\n\nSelect the Playlist you want to play!."),    
     reply_markup=InlineKeyboardMarkup(buttons),
     )
