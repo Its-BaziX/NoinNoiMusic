@@ -111,13 +111,13 @@ def single_markup(ID, duration, user_id, query):
 def search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query):
     buttons= [
             [
-                InlineKeyboardButton(text="1️⃣", callback_data=f'Music {ID1}|{duration1}|{user_id}'),
-                InlineKeyboardButton(text="2️⃣", callback_data=f'Music {ID2}|{duration2}|{user_id}'),
-                InlineKeyboardButton(text="3️⃣", callback_data=f'Music {ID3}|{duration3}|{user_id}')
+                InlineKeyboardButton(text="1️", callback_data=f'Music {ID1}|{duration1}|{user_id}'),
+                InlineKeyboardButton(text="2️", callback_data=f'Music {ID2}|{duration2}|{user_id}'),
+                InlineKeyboardButton(text="3️", callback_data=f'Music {ID3}|{duration3}|{user_id}')
             ],
             [ 
-                InlineKeyboardButton(text="4️⃣", callback_data=f'Music {ID4}|{duration4}|{user_id}'),
-                InlineKeyboardButton(text="5️⃣", callback_data=f'Music {ID5}|{duration5}|{user_id}')
+                InlineKeyboardButton(text="4️", callback_data=f'Music {ID4}|{duration4}|{user_id}'),
+                InlineKeyboardButton(text="5️", callback_data=f'Music {ID5}|{duration5}|{user_id}')
             ],
         ]
     return buttons   
@@ -131,6 +131,9 @@ def search_markup2(ID6, ID7, ID8, ID9, ID10, duration6, duration7, duration8, du
             ],
             [ 
                 InlineKeyboardButton(text="9️⃣", callback_data=f'Music {ID9}|{duration9}|{user_id}'),
+                InlineKeyboardButton(
+                        "🗑 ᴄʟᴏsᴇ", callback_data="close2"
+                    ),
                 InlineKeyboardButton(text="🔟", callback_data=f'Music {ID10}|{duration10}|{user_id}')
             ],
         ]
@@ -153,7 +156,7 @@ start_keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "📜 Commands", url=""
+                        "📜 Commands", url="https://telegra.ph/%F0%9D%90%8D%F0%9D%90%8E%F0%9D%90%88%F0%9D%90%8D%F0%9D%90%8E%F0%9D%90%88-%F0%9D%90%8C%F0%9D%90%94%F0%9D%90%92%F0%9D%90%88%F0%9D%90%82-12-07"
                     )
                 ],
                 [
