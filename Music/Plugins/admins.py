@@ -60,7 +60,7 @@ async def stop_cmd(_, message):
         await music.pytgcalls.leave_group_call(chat_id)
     except:
         pass   
-    await message.reply_text("Erased Databae, Queues, Logs, Raw Files, Downloads.")
+    await message.reply_text("DONE DATABACE SUCCESFULLY CLEAN ✨.")
     
 @app.on_message(filters.command("pause"))
 async def pause_cmd(_, message): 
